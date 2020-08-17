@@ -16,14 +16,17 @@
 	<div id="my-app">
 		<!--mustache syntax data binding-->
 		<h1> {{greet}} {{name}}</h1>
-		<<!--v-text directive
-		<div v-text="message"></div> -->
+		<!--v-text directive
 		<div>
-			<h1>{{message}}</h1>
 			<h1 v-text="message"></h1>
-			<!--one time binding-->
+			<!--one time binding
+
 			<h1 v-once>{{message}}</h1>
-			<h1 v-text="message" v-once></h1>
+			<h1 v-text="message" v-once></h1> -->
+			<!--v-html directive only render content you trust -->
+			<p v-html="brandName"> </p>
+			<h1 v-bind:id = "myId">MyID</h1>
+			<button v-bind:disabled="isDisabled">Bind</button>
 		</div>
 
 	</div>
@@ -35,9 +38,12 @@
   	var vm = new Vue({
   		el: '#my-app',
   		data: {
-  			name: "Makenna!",
+  			name: "Rafiki!",
   			greet: "Hello",
-  			message: "Welcome to my site"
+  			message: "Welcome to my site",
+  			brandName: "<b>Makenna Codes</b>",
+  			myId: "dataId",
+  			isDisabled: true
   		}
   	});
 
