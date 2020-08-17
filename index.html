@@ -27,9 +27,15 @@
 			<p v-html="brandName"> </p>
 			<h1 v-bind:id = "myId">MyID</h1>
 			<button v-bind:disabled="isDisabled">Bind</button>
+			<!--in-line styling as JS object-->
+			<h1 v-bind:style="{
+					color: highlightColor, 
+					fontSize: headerSize+'px',
+					padding: '20px'}">Inline</h1>
+		
+			<h2 v-bind:style="headerStyleObject">Style Object</h2>
 		</div>
 
-	</div>
   <script src="js/scripts.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
   </script>
@@ -43,7 +49,14 @@
   			message: "Welcome to my site",
   			brandName: "<b>Makenna Codes</b>",
   			myId: "dataId",
-  			isDisabled: true
+  			isDisabled: true,
+  			highlightColor: "Orange",
+  			headerSize: 50,
+  			headerStyleObject: {
+  				color: "orange",
+  				fontSize: "50px",
+  				padding: "20px"
+  			}
   		}
   	});
 
