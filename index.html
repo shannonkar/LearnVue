@@ -34,6 +34,7 @@
 					padding: '20px'}">Inline</h1>
 		
 			<h2 v-bind:style="headerStyleObject">Style Object</h2>
+			<div v-bind:style="[baseStyleObject, successStyleObject]">Success Style</div>
 		</div>
 
   <script src="js/scripts.js"></script>
@@ -56,6 +57,15 @@
   				color: "orange",
   				fontSize: "50px",
   				padding: "20px"
+  			},
+  			baseStyleObject: {
+  				fontSize: "50px",
+  				padding: "10px",
+  			},
+  			successStyleObject: {
+  				color: "green",
+  				backgroundColor: "lightgreen",
+  				border: "1px solid green"
   			}
   		}
   	});
